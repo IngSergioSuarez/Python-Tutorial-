@@ -6,21 +6,21 @@ root.title("Simple Calculator")
 e = Entry(root, width= 50, borderwidth= 5)
 e.grid(row= 0, column= 0, columnspan= 3, padx= 10, pady= 10)
 
-def button_Click():
-    return
+def button_Click(number):
+    e.insert(0,number)
 
 # Define Buttons
 
-button_1 = Button(root, text = "1", padx=40, pady=20, command=lambda: button_Click())
-button_2 = Button(root, text = "2", padx=40, pady=20, command=lambda: button_Click())
-button_3 = Button(root, text = "3", padx=40, pady=20, command=lambda: button_Click())
-button_4 = Button(root, text = "4", padx=40, pady=20, command=lambda: button_Click())
-button_5 = Button(root, text = "6", padx=40, pady=20, command=lambda: button_Click())
-button_6 = Button(root, text = "6", padx=40, pady=20, command=lambda: button_Click())
-button_7 = Button(root, text = "7", padx=40, pady=20, command=lambda: button_Click())
-button_8 = Button(root, text = "8", padx=40, pady=20, command=lambda: button_Click())
-button_9 = Button(root, text = "9", padx=40, pady=20, command=lambda: button_Click())
-button_0 = Button(root, text = "0", padx=40, pady=20, command=lambda: button_Click())
+button_1 = Button(root, text = "1", padx=40, pady=20, command=lambda: button_Click(1))
+button_2 = Button(root, text = "2", padx=40, pady=20, command=lambda: button_Click(2))
+button_3 = Button(root, text = "3", padx=40, pady=20, command=lambda: button_Click(3))
+button_4 = Button(root, text = "4", padx=40, pady=20, command=lambda: button_Click(4))
+button_5 = Button(root, text = "6", padx=40, pady=20, command=lambda: button_Click(5))
+button_6 = Button(root, text = "6", padx=40, pady=20, command=lambda: button_Click(6))
+button_7 = Button(root, text = "7", padx=40, pady=20, command=lambda: button_Click(7))
+button_8 = Button(root, text = "8", padx=40, pady=20, command=lambda: button_Click(8))
+button_9 = Button(root, text = "9", padx=40, pady=20, command=lambda: button_Click(9))
+button_0 = Button(root, text = "0", padx=40, pady=20, command=lambda: button_Click(0))
 button_add = Button(root, text = "+", padx=39, pady=20, command=lambda: button_Click())
 button_equal = Button(root, text = "=", padx=91, pady=20, command=lambda: button_Click())
 button_clear = Button(root, text = "Clear", padx=79, pady=20, command=lambda: button_Click())
