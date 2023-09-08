@@ -1,0 +1,21 @@
+from tkinter import * 
+
+
+"""this lines set up the size, title and other features that are place in the window"""
+
+app = Tk()
+app.title("ULINK_Logs") # this line set the name of the window
+app.geometry("960x540") # This line set the size of the window 
+app.config(bg="SkyBlue1") # in this line we can place several features such as Background or foreground
+
+appTitle = Label(text= "ULINK LOGS")
+appTitle.config(
+    background= "SkyBlue1",
+    font= ("Arial", 28, "bold")
+)
+appTitle.grid(row= 0, column= 0, padx= 350, pady=10, sticky="N")
+
+
+app.mainloop()
+
+
