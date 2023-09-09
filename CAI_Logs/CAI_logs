@@ -8,12 +8,39 @@ app.title("ULINK_Logs") # this line set the name of the window
 app.geometry("960x540") # This line set the size of the window 
 app.config(bg="SkyBlue1") # in this line we can place several features such as Background or foreground
 
+"""The lines bellow will create the title that will be display in the """
+
 appTitle = Label(text= "ULINK LOGS")
 appTitle.config(
     background= "SkyBlue1",
     font= ("Arial", 28, "bold")
 )
-appTitle.grid(row= 0, column= 0, padx= 350, pady=10, sticky="N")
+appTitle.grid(row= 0, column= 0, columnspan=2, padx= 350, pady=10)
+
+"""input frame, in these lines we are going to create the frame where we goiing to place the text box to add the logs"""
+
+input_frame = Frame(app)
+
+input_frame.grid(row=1, column= 0, padx = 20, pady= 10)
+
+input_frame.config(
+    background= "LightYellow3",
+    width = 400,
+    height= 400
+)
+
+"""output frame, in these lines we are going to create the frame where we going to displayu the logs filtered"""
+
+output_frame = Frame(app)
+
+output_frame.grid(row=1, column= 1, padx = 10, pady= 10)
+
+output_frame.config(
+    background= "LightYellow3",
+    width = 400,
+    height= 400
+)
+
 
 
 app.mainloop()
