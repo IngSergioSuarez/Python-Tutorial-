@@ -1,5 +1,7 @@
 from tkinter import * 
 
+log = " "
+
 
 """this lines set up the size, title and other features that are place in the window"""
 
@@ -15,7 +17,18 @@ appTitle.config(
     background= "SkyBlue1",
     font= ("Arial", 28, "bold")
 )
-appTitle.grid(row= 0, column= 0, columnspan=2, padx= 350, pady=10)
+appTitle.grid(row= 0, column= 0, columnspan=3, padx= 150, pady=10)
+
+def filter_Logs():    
+    unfilter_Log = input_Logs.get()
+    print(unfilter_Log)
+
+    
+"""Button that create the filtering process"""
+
+filter_Button = Button(app, text = "Convert", command=lambda:filter_Logs).grid(row=1, column=1, padx = 10, pady= 10)
+
+
 
 """input frame, in these lines we are going to create the frame where we goiing to place the text box to add the logs"""
 
@@ -29,11 +42,22 @@ input_frame.config(
     height= 400
 )
 
+"""Text box that will contain the logs the user needs to filter"""
+
+input_Logs = Text(input_frame,)
+input_Logs.grid(row= 0, column= 0, ipadx= 1, ipady=2)
+input_Logs.place(
+    x= 25,
+    y= 75,
+    width= 350,
+    height=300
+)
+
 """output frame, in these lines we are going to create the frame where we going to displayu the logs filtered"""
 
 output_frame = Frame(app)
 
-output_frame.grid(row=1, column= 1, padx = 10, pady= 10)
+output_frame.grid(row=1, column= 2, padx = 20, pady= 10)
 
 output_frame.config(
     background= "LightYellow3",
@@ -41,7 +65,16 @@ output_frame.config(
     height= 400
 )
 
+"""Text box that will contain the logs the system filtered"""
 
+output_Logs = Text(output_frame)
+output_Logs.grid(row= 0, column= 0, ipadx= 1, ipady=2)
+output_Logs.place(
+    x= 25,
+    y= 75,
+    width= 350,
+    height=300
+)
 
 app.mainloop()
 
