@@ -88,7 +88,7 @@ output_frame.config(
 """Text box that will contain the logs the system filtered"""
 
 output_Logs = scrolledtext(output_frame, width= 350, height=300)
-output_Logs.grid()
+output_Logs.pack()
 
 app.mainloop()
 
