@@ -1,4 +1,6 @@
 from tkinter import * 
+from tkinter import scrolledtext
+
 
 log = " "
 
@@ -85,14 +87,8 @@ output_frame.config(
 
 """Text box that will contain the logs the system filtered"""
 
-output_Logs = Text(output_frame)
-output_Logs.grid(row= 0, column= 0, ipadx= 1, ipady=2)
-output_Logs.place(
-    x= 25,
-    y= 75,
-    width= 350,
-    height=300
-)
+output_Logs = scrolledtext(output_frame, width= 350, height=300)
+output_Logs.grid()
 
 app.mainloop()
 
