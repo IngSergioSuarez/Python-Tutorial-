@@ -19,14 +19,31 @@ appTitle.config(
 )
 appTitle.grid(row= 0, column= 0, columnspan=3, padx= 150, pady=10)
 
-def filter_Logs():    
-    unfilter_Log = input_Logs.get()
-    print(unfilter_Log)
+def retrieve_input():
+    global inputValue
+    inputValue = input_Logs.get("1.0","end-1c")
 
-    
+    first_Filter_Logs = inputValue[16:] # We eliminate the first 16 chatraceteres of the logs  "D"SP:<sy><sy><sx>" thati indicates is sending by the Dispatch
+
+    second_Filter_Logs = first_Filter_Logs.split("<cr>") # The second filter create a list of values, and separate by the characters "<cr>"
+
+    for x in second_Filter_Logs:
+
+        if x.startswith('T') == True:
+            print(x)
+            output_Logs.insert("1.0", x[:4] + "-----" + x[4:]) 
+            print(x[:4] + "-----" + x[4:])
+
+        else: 
+            print(x)
+            output_Logs.insert("1.0", x[:3] + "-----" + x[3:])   
+            print(x[:3] + "-----" + x[3:]) 
+        
+
+                
 """Button that create the filtering process"""
 
-filter_Button = Button(app, text = "Convert", command=lambda:filter_Logs).grid(row=1, column=1, padx = 10, pady= 10)
+filter_Button = Button(app, text = "Convert", command=lambda:retrieve_input()).grid(row=1, column=1, padx = 10, pady= 10)
 
 
 
@@ -44,7 +61,7 @@ input_frame.config(
 
 """Text box that will contain the logs the user needs to filter"""
 
-input_Logs = Text(input_frame,)
+input_Logs = Text(input_frame)
 input_Logs.grid(row= 0, column= 0, ipadx= 1, ipady=2)
 input_Logs.place(
     x= 25,
@@ -64,6 +81,7 @@ output_frame.config(
     width = 400,
     height= 400
 )
+
 
 """Text box that will contain the logs the system filtered"""
 
