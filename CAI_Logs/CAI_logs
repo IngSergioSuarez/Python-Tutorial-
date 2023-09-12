@@ -1,5 +1,5 @@
 from tkinter import * 
-from tkinter import scrolledtext
+from tkinter.scrolledtext import ScrolledText
 
 
 log = " "
@@ -32,13 +32,13 @@ def retrieve_input():
     for x in second_Filter_Logs:
 
         if x.startswith('T') == True:
-            print(x)
-            output_Logs.insert("1.0", x[:4] + "-----" + x[4:]) 
+            
+            output_Logs.insert(END, x[:4] + "-----" + x[4:] + "\n") 
             print(x[:4] + "-----" + x[4:])
 
         else: 
-            print(x)
-            output_Logs.insert("1.0", x[:3] + "-----" + x[3:])   
+            
+            output_Logs.insert(END, x[:3] + "-----" + x[3:] + "\n")   
             print(x[:3] + "-----" + x[3:]) 
         
 
@@ -87,8 +87,13 @@ output_frame.config(
 
 """Text box that will contain the logs the system filtered"""
 
-output_Logs = scrolledtext(output_frame, width= 350, height=300)
-output_Logs.pack()
+output_Logs = ScrolledText(output_frame)
+output_Logs.place(
+    x= 25,
+    y= 75,
+    width= 350,
+    height= 300
+)
 
 app.mainloop()
 
