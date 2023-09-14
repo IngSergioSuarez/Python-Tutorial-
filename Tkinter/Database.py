@@ -59,6 +59,27 @@ def submit():
     state.delete(0, END)
     zipcode.delete(0, END)
 
+# Create Query Function For Database
+
+def query():
+
+    #Create a database or connect to one
+    conn = sqlite3.connect('address_book2.db')
+
+    #Create a cursor
+    c = conn.cursor()
+
+    c.execute("SELECT *, oid FROM addresses")
+    records = c.fetchall()
+    print(records)
+
+    #Commit changes 
+    conn.commit()
+
+    #Close connection
+    conn.close()
+
+
 #Create text boxes
 
 f_name = Entry(root, width= 30)
@@ -84,10 +105,14 @@ city_label = Label(root, text = "city: ").grid(row= 3, column=0, padx= 10, pady=
 state_label = Label(root, text = "State: ").grid(row= 4, column=0, padx= 10, pady= 5)
 zipcode_label = Label(root, text = "Zip code: ").grid(row= 5, column=0, padx= 10, pady= 5)
 
-# Cfreate a Submit button 
+# Create a Submit button 
 
 submit_btn = Button(root, text = "Add record to Database", command = submit)
 submit_btn.grid(row= 6, column= 0, columnspan= 2, pady= 10, padx= 10, ipadx= 100)
 
+# Create a Query Button
+
+query_btn = Button(root, text= "Show Records", command= query)
+query_btn.grid(row= 7, column= 0, columnspan= 2, pady= 10, padx= 10, ipadx= 126)
 
 root.mainloop()
