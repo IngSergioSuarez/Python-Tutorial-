@@ -4,7 +4,7 @@ import sqlite3
 
 root = Tk()
 root.title('Ejercicio de Base de datos')
-root.geometry("400x400")
+root.geometry("400x600")
 
 # Databases
 
@@ -20,6 +20,72 @@ c.execute(""" CREATE TABLE "addresses" (
          zipcode integer
 )
 """)'''
+
+# Create Delete Function For Database
+
+def delete():
+
+    #Create a database or connect to one
+    conn = sqlite3.connect('address_book2.db')
+
+    #Create a cursor
+    c = conn.cursor()
+
+    c.execute("DELETE FROM addresses WHERE oid = " + delete_box.get())
+
+    #Commit changes 
+    conn.commit()
+
+    #Close connection
+    conn.close()
+
+def update():
+
+    update_window = Tk()
+    update_window.title('Editor de records')
+    update_window.geometry("400x400")
+
+    f_name_update = Entry(update_window, width= 30)
+    f_name_update.grid(row=0, column=1, padx= 20, pady=5)
+    l_name_update = Entry(update_window, width= 30)
+    l_name_update.grid(row=1, column=1, padx= 20, pady=5)
+    address_update = Entry(update_window, width= 30)
+    address_update.grid(row=2, column=1, padx= 20, pady=5)
+    city_update = Entry(update_window, width= 30)
+    city_update.grid(row=3, column=1, padx= 20, pady=5)
+    state_update = Entry(update_window, width= 30)
+    state_update.grid(row=4, column=1, padx= 20, pady=5)
+    zipcode_update = Entry(update_window, width= 30)
+    zipcode_update.grid(row=5, column=1, padx= 20, pady=5)
+
+
+    #Create the labels
+
+    f_name_label__update = Label(update_window, text = "First name: ").grid(row= 0, column=0, padx= 10, pady= 5)
+    l_name_label__update = Label(update_window, text = "Last name: ").grid(row= 1, column=0, padx= 10, pady= 5)
+    address_label_update = Label(update_window, text = "address: ").grid(row= 2, column=0, padx= 10, pady= 5)
+    city_label_update = Label(update_window, text = "city: ").grid(row= 3, column=0, padx= 10, pady= 5)
+    state_label_update = Label(update_window, text = "State: ").grid(row= 4, column=0, padx= 10, pady= 5)
+    zipcode_label_update = Label(update_window, text = "Zip code: ").grid(row= 5, column=0, padx= 10, pady= 5)
+
+    save_btn = Button(update_window, text= "Save Record", command= update)
+    save_btn.grid(row= 6, column= 0, columnspan= 2, pady= 10, padx= 10, ipadx= 126)
+
+    #Create a database or connect to one
+    conn = sqlite3.connect('address_book2.db')
+
+    #Create a cursor
+    c = conn.cursor()
+
+
+    #Commit changes 
+    conn.commit()
+
+    #Close connection
+    conn.close()
+
+
+
 # Create Submit Function For Database
 
 def submit():
@@ -80,7 +146,7 @@ def query():
 
         print_records += str(record) + "\n"
 
-    query_label = Label(root, text= print_records).grid(row = 8, column= 0, columnspan= 2)
+    query_label = Label(root, text= print_records).grid(row = 12, column= 0, columnspan= 2)
 
     #Commit changes 
     conn.commit()
@@ -104,6 +170,10 @@ state.grid(row=4, column=1, padx= 20, pady=5)
 zipcode = Entry(root, width= 30)
 zipcode.grid(row=5, column=1, padx= 20, pady=5)
 
+delete_box = Entry(root, width= 30)
+delete_box.grid(row=10, column=1, padx= 20, pady=5)
+ 
+
 
 #Create the labels
 
@@ -114,6 +184,8 @@ city_label = Label(root, text = "city: ").grid(row= 3, column=0, padx= 10, pady=
 state_label = Label(root, text = "State: ").grid(row= 4, column=0, padx= 10, pady= 5)
 zipcode_label = Label(root, text = "Zip code: ").grid(row= 5, column=0, padx= 10, pady= 5)
 
+delete_label = Label(root, text = "Delete record: ").grid(row= 10, column=0, padx= 10, pady= 5)
+
 # Create a Submit button 
 
 submit_btn = Button(root, text = "Add record to Database", command = submit)
@@ -123,5 +195,15 @@ submit_btn.grid(row= 6, column= 0, columnspan= 2, pady= 10, padx= 10, ipadx= 100
 
 query_btn = Button(root, text= "Show Records", command= query)
 query_btn.grid(row= 7, column= 0, columnspan= 2, pady= 10, padx= 10, ipadx= 126)
+
+#Create a Delete Button
+
+delete_btn = Button(root, text= "Delete Record", command= delete)
+delete_btn.grid(row= 9, column= 0, columnspan= 2, pady= 10, padx= 10, ipadx= 126)
+
+#Create a Delete Button
+
+update_btn = Button(root, text= "Edit Record", command= update)
+update_btn.grid(row= 11, column= 0, columnspan= 2, pady= 10, padx= 10, ipadx= 126)
 
 root.mainloop()
