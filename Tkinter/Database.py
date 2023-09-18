@@ -39,11 +39,91 @@ def delete():
     #Close connection
     conn.close()
 
+def save_update():
+
+    #Create a database or connect to one
+    conn = sqlite3.connect('address_book2.db')
+
+    #Create a cursor
+    c = conn.cursor()
+
+    record_id = delete_box.get()
+
+    c.execute("""UPDATE addresses SET
+        first_name = :first,
+        last_name= :last,
+        address = :address,
+        city = :city,
+        state = :state,
+        zipcode = :zipcode
+        
+        WHERE oid = :oid""",
+        {
+            'first': f_name_update.get(),
+            'last' : l_name_update.get(),
+            'address' : address_update.get(),
+            'city' : city_update.get(),
+            'state' : state_update.get(),
+            'zipcode' : zipcode_update.get(),
+
+            'oid': record_id
+
+        }
+              )
+    
+    
+    # Clear the text boxes when we click save. 
+    f_name_update.delete(0, END)
+    l_name_update.delete(0, END)
+    address_update.delete(0, END)
+    city_update.delete(0, END)
+    state_update.delete(0, END)
+    zipcode_update.delete(0, END)
+
+
+
+    #Commit changes 
+    conn.commit()
+
+    #Close connection
+    conn.close()
+
+    update_window.destroy()
+
+    
+
 def update():
+
+    global update_window
 
     update_window = Tk()
     update_window.title('Editor de records')
     update_window.geometry("400x400")
+
+
+    #Create a database or connect to one
+    conn = sqlite3.connect('address_book2.db')
+
+    #Create a cursor
+    c = conn.cursor()
+
+    record_id = delete_box.get()
+
+    #query the Database
+    c.execute("SELECT * FROM addresses WHERE oid = " + record_id)
+    records = c.fetchall()
+
+    # Create global variables for text box names
+    
+    
+    global f_name_update
+    global l_name_update
+    global address_update
+    global city_update
+    global state_update
+    global zipcode_update
+
+    # Create the text boxes 
 
     f_name_update = Entry(update_window, width= 30)
     f_name_update.grid(row=0, column=1, padx= 20, pady=5)
@@ -68,21 +148,30 @@ def update():
     state_label_update = Label(update_window, text = "State: ").grid(row= 4, column=0, padx= 10, pady= 5)
     zipcode_label_update = Label(update_window, text = "Zip code: ").grid(row= 5, column=0, padx= 10, pady= 5)
 
-    save_btn = Button(update_window, text= "Save Record", command= update)
+    for record in records:
+        f_name_update.insert(0, record[0])
+        l_name_update.insert(0, record[1])
+        address_update.insert(0, record[2])
+        city_update.insert(0, record[3])
+        state_update.insert(0, record[4])
+        zipcode_update.insert(0, record[5])
+
+    save_btn = Button(update_window, text= "Save Record", command= save_update)
     save_btn.grid(row= 6, column= 0, columnspan= 2, pady= 10, padx= 10, ipadx= 126)
 
-    #Create a database or connect to one
-    conn = sqlite3.connect('address_book2.db')
-
-    #Create a cursor
-    c = conn.cursor()
-
+    
 
     #Commit changes 
     conn.commit()
 
     #Close connection
     conn.close()
+"""
+    
+
+
+"""
+
 
 
 
@@ -184,7 +273,7 @@ city_label = Label(root, text = "city: ").grid(row= 3, column=0, padx= 10, pady=
 state_label = Label(root, text = "State: ").grid(row= 4, column=0, padx= 10, pady= 5)
 zipcode_label = Label(root, text = "Zip code: ").grid(row= 5, column=0, padx= 10, pady= 5)
 
-delete_label = Label(root, text = "Delete record: ").grid(row= 10, column=0, padx= 10, pady= 5)
+delete_label = Label(root, text = "Select ID: ").grid(row= 10, column=0, padx= 10, pady= 5)
 
 # Create a Submit button 
 
