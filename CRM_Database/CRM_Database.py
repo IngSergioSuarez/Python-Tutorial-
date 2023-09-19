@@ -12,7 +12,8 @@ mydb =mysql.connector.connect(
     host = "localhost",
     user = "root",
     passwd= "68HC_908gp32",
-    database ='crm_exercise'
+    database = "crm_Exercise"
+
 )
 
 # Create a cursor and initialize it 
@@ -25,6 +26,8 @@ my_cursor = mydb.cursor()
 
 # Create a table
 
+"""
+
 my_cursor.execute('CREATE TABLE IF NOT EXISTS customers (\
                    first_name VARCHAR(255),\
                    last_name VARCHAR(255),\
@@ -32,7 +35,7 @@ my_cursor.execute('CREATE TABLE IF NOT EXISTS customers (\
                    price_paid DECIMAL(10,2),\
                    user_id INT AUTO_INCREMENT PRIMARY KEY)')
 
-
+"""
 
 # To add more columns to an existing table we can do it in the following way
 """
