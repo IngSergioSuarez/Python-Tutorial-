@@ -26,7 +26,7 @@ my_cursor = mydb.cursor()
 
 # Create a table
 
-"""
+
 
 my_cursor.execute('CREATE TABLE IF NOT EXISTS customers (\
                    first_name VARCHAR(255),\
@@ -35,7 +35,7 @@ my_cursor.execute('CREATE TABLE IF NOT EXISTS customers (\
                    price_paid DECIMAL(10,2),\
                    user_id INT AUTO_INCREMENT PRIMARY KEY)')
 
-"""
+
 
 # To add more columns to an existing table we can do it in the following way
 """
@@ -66,6 +66,32 @@ title_label = Label(app, text= "CRM Exercise", font=("helvetica", 16)).grid(row=
 # Create Main form to enter customer Data 
 
 # Function Clear fields
+def submit_customer():
+    sql_command = "INSERT INTO customers(first_name, last_name, zipcode, price_paid, email, address_1, address_2, city, state, country, phone, payment_method, discount_code) \
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    values = (
+        f_name_box.get(),
+        l_name_box.get(),
+        zipcode_box.get(),
+        price_paid_box.get(),
+        email_box.get(),
+        address_1_box.get(),
+        address_2_box.get(),
+        city_box.get(),
+        state_box.get(),
+        country_box.get(),
+        phone_box.get(),
+        payment_method_box.get(),
+        discount_code_box.get()    
+        )
+
+    my_cursor.execute(sql_command, values)
+
+    # Commit the changes to the database 
+
+    mydb.commit()
+
+    clear_fields()
 
 def clear_fields():
     f_name_box.delete(0, END)
@@ -81,6 +107,8 @@ def clear_fields():
     phone_box.delete(0, END)
     payment_method_box.delete(0, END)
     discount_code_box.delete(0, END)
+
+    
 
 # Create the Labels
 
@@ -129,10 +157,23 @@ discount_code_box.grid(row=13, column=1, pady= 5, padx= 10)
 
 # Create buttons
 
-add_customer_button = Button(app, text= "Add Customer")
+add_customer_button = Button(app, text= "Add Customer", command=submit_customer)
 add_customer_button.grid(row= 14, column=0, padx= 10, pady= 5)
 
 clear_fields_button = Button(app, text= "Clear Fields", command=clear_fields)
 clear_fields_button.grid(row= 14, column=1, padx= 10, pady= 5)
+
+list_customers_button = Button(app, text= "List Customer")
+list_customers_button.grid(row= 15, column= 0, padx=10)
+
+# Query the DB
+"""
+my_cursor.execute("SELECT * FROM customers")
+result = my_cursor.fetchall()
+
+for x in result:
+    print(x)
+"""
+
 
 app.mainloop()
