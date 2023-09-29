@@ -4,6 +4,8 @@ from tkinter import *
 from tkinter import ttk as ttk
 from tkinter import filedialog as fd
 from tkinter.scrolledtext import ScrolledText 
+import transactions.ticket_transaction as TT
+
 
 
 myApp = Tk()
@@ -57,6 +59,9 @@ combobox_log_type.grid(row=1, column=2, padx= 10, pady=10)
 
 def logs_filter():
 
+    global log_value 
+    log_value = entry_dispatch_log.get()
+
     logs_filter_results = Tk()
     logs_filter_results.title('ULINK logs')
 
@@ -77,10 +82,16 @@ def logs_filter():
     options_results_frame = LabelFrame(mainFrame_logs_filter_results, text='Options')
     options_results_frame.grid(row=1, column=0, padx= 20, pady= 10)
 
+    original_string_log.config(state= NORMAL)
+    original_string_log.insert(END, log_value)
+    original_string_log.config(state= DISABLED)
+
+
+
     # Functions of the frome Options 
 
     def copy_results():
-        return
+        print(TT.mix_transaction)
     
     def clean_results():
         return
