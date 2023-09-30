@@ -87,6 +87,138 @@ mix_transaction = {
     "080" : "Special Instructions #2",
     "081" : "Operator Message",
     "082" : "local Ticket Change",
-    "083" : "Lot/Block #"
+    "083" : "Lot/Block #",
+    "084" : "Project Phone #",
+    "085" : "% Calcium",
+    "086" : "%. Air Entrainment",
+    "087" : "% Super Plasticizer",
+    "092" : "% Calcium",
+    "093" : "% Air entrainment",
+    "094" : "% Super Plasticizer",
+    "095" : "% Hot Water",
+    "096" : "Pounds of Ice",
+    "097" : "Loads Delivered",
+    "098" : "Admixture Code",
+    "099" : "Customer Job Number",
+    "101" : "Mix Code (Batchbook ID)",
+    "102" : "Mix Description",
+    "103" : "Agg    #1 Product Name",
+    "104" : "Agg    #1 Weight",
+    "105" : "Agg    #2 Product Name",
+    "106" : "Agg    #2 Weight",
+    "107" : "Agg    #3 Product Name",
+    "108" : "Agg    #3 Weight",
+    "109" : "Agg    #4 Product Name",
+    "110" : "Agg    #4 Weight",
+    "111" : "Cement #1 Product Name",
+    "112" : "Cement #1 Weight",
+    "113" : "Cement #2 Product Name",
+    "114" : "Cement #2 Weight",
+    "115" : "Water  #1 Product Name",
+    "116" : "Water  #1 Weight/Gal",
+    "117" : "Admix  #1 Product Name",
+    "118" : "Admix  #1 Ozs/%Cement",
+    "119" : "Admix  #2 Product Name",
+    "120" : "Admix  #2 Ozs/%Cement",
+    "121" : "Admix  #3 Product Name",
+    "122" : "Admix  #3 Ozs/%Cement",
+    "123" : "Admix  #4 Product Name",
+    "124" : "Admix  #4 Ozs/%Cement",
+    "125" : "Admix  #5 Product Name",
+    "126" : "Admix  #5 Ozs/%Cement",
+    "127" : "Admix  #6 Product Name",
+    "128" : "Admix  #6 Ozs",
+    "129" : "Cement #3 Product Name",
+    "130" : "Cement #3 Weight",
+    "131" : "Water  #2 Product Name",
+    "132" : "Water  #2 Weight/Gal",
+    "133" : "Mixer Time",
+    "134" : "Maximun Load Size",
+    "135" : "Agg    #5 Product Name",
+    "136" : "Agg    #5 Weight",
+    "137" : "Percent Air",
+    "138" : "Slump Target",
+    "139" : "Maximum Dry Load Size",
+    "140" : "Maximum Async Load Size",
+    "141" : "Agg Moisture Reference",
+    "142" : "Metric (Y/N)",
+    "143" : "Consistence",
+    "144" : "Extended Description",
+    "145" : "Mix Version",
+    "146" : "RESERVED",
+    "147" : "RESERVED",
+    "148" : "RESERVED",
+    "149" : "Zone Travel Mileage",
+    "150" : "Mix desc (Chars 33 - 40)",
+    "151" : "Weighmaster name",
+    "152" : "Begin unload time",
+    "153" : "User Defined #4",
+    "154" : "User Defined #5",
+    "155" : "User Defined #6",
+    "156" : "User Defined #7",
+    "157" : "User Defined #8",
+    "158" : "Pocket number",
+    "159" : "Cement type",
+    "160" : "User Defined #11",
+    "161" : "Max Water",
+    "162" : "Max Water x delv qty",
+    "163" : "Agg water",
+    "164" : "Agg water x delv qty",
+    "165" : "Plt water - agg water",
+    "166" : "(Plt water - agg water) x qty",
+    "167" : "Max wtr - plt wtr - agg wtr",
+    "168" : "(Max wtr - plt wtr - agg wtr) x qty",
+    "169" : "User Defined #20",
+    "170" : "User Defined #21",
+    "171" : "User Defined #22",
+    "172" : "User Defined #23",
+    "173" : "User Defined #24",
+    "174" : "User Defined #25",
+    "175" : "Slump (UDF26)",
+    "176" : "Weighmaster name",
+    "177" : "Customer name (chars 33-40)",
+    "178" : "Delivery addr (chars 65-96)",
+    "179" : "Delivery addr (chars 97-128)",
+    "180" : "User Defined #31",
+    "181" : "Ship to cust code (UDF32)",
+    "182" : "Ship to cust name (UDF33)",
+    "183" : "Ship to cust address 1 (UDF34)",
+    "184" : "Ship to cust address 2 (UDF35)",
+    "185" : "Ship to cust postal cd (UDF36)",
+    "186" : "Ship to cust city (UDF37)",
+    "187" : "Reference customer code (UDF38)",
+    "188" : "Project name (UDF39)",
+    "189" : "Project name (UDF40)"
+
+
+
+
+   
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
