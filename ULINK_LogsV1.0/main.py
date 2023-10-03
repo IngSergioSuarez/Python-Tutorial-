@@ -33,6 +33,8 @@ def select_file():
     )
 
 
+
+
 # Frame where we're place the Log strings to filter
 
 logs_info_frame = LabelFrame(mainFrame, text='Logs info')
@@ -73,11 +75,11 @@ def logs_filter():
 
     original_string_log = ScrolledText(logs_info_filter_results_frame)
     original_string_log.grid(row= 0, column= 0, padx= 10, pady=5)
-    original_string_log.config(width=40, height=15)
+    original_string_log.config(width=60, height=15)
 
     filter_string_log = ScrolledText(logs_info_filter_results_frame)
     filter_string_log.grid(row= 0, column= 1, padx= 10, pady=5)
-    filter_string_log.config(width=40, height=15)
+    filter_string_log.config(width=60, height=15)
 
     options_results_frame = LabelFrame(mainFrame_logs_filter_results, text='Options')
     options_results_frame.grid(row=1, column=0, padx= 20, pady= 10)
@@ -85,6 +87,32 @@ def logs_filter():
     original_string_log.config(state= NORMAL)
     original_string_log.insert(END, log_value)
     original_string_log.config(state= DISABLED)
+
+    global input_value
+    input_value = original_string_log.get("1.0", "end-1c")
+
+    first_Filter_Logs = input_value[16:]
+    second_Filter_Logs = first_Filter_Logs.split("<cr>")
+
+    for x in second_Filter_Logs:
+
+        if x.startswith('T') == True:
+
+            ulink_field = x[:4]
+            ulink_field_description = TT.mix_transaction.get(ulink_field)
+            filter_string_log.insert(END, x[:4] + " -- " + str(ulink_field_description) + " -- " + x[4:]+ "\n") 
+            #print(x[:4] + " -- " + str(ulink_field_description) + " -- " + x[4:])
+
+        else: 
+
+            ulink_field = x[:3]
+            ulink_field_description = TT.mix_transaction.get(ulink_field)
+            filter_string_log.insert(END, x[:3] + " -- " + str(ulink_field_description) + " -- " + x[3:] + "\n")   
+            #print(x[:3] + " -- " + str(ulink_field_description) + " -- " + x[3:])
+
+
+
+    #filter_string_log.insert(END, input_value)
 
 
 
@@ -99,15 +127,15 @@ def logs_filter():
     def search_results():
         return
 
-    button_copy = Button(options_results_frame, text= 'Copy results', command = copy_results)
+    button_copy = Button(options_results_frame, text= 'Copy Results', command = copy_results)
     button_copy.grid(row= 0, column=0, padx=10, pady=10)
     button_copy.config(width= 30, height=2)
 
-    button_clean = Button(options_results_frame, text= 'Clear results', command = clean_results)
+    button_clean = Button(options_results_frame, text= 'Clear Results', command = clean_results)
     button_clean.grid(row= 0, column=1, padx=10, pady=10)
     button_clean.config(width= 30, height=2)
 
-    button_search = Button(options_results_frame, text= 'Search results', command = search_results)
+    button_search = Button(options_results_frame, text= 'Search Results', command = search_results)
     button_search.grid(row= 0, column=2, padx=10, pady=10)
     button_search.config(width= 30, height=2)
 

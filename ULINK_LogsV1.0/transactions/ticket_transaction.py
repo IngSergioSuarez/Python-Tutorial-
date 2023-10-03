@@ -1,7 +1,6 @@
 
 # list of caracters of a list. 
 
-
 mix_transaction = {
     "T002" : "Begin Ticket",
     "T007" : "Ticket Data Field",
@@ -274,28 +273,33 @@ mix_transaction = {
     "272" : "Extra Product #10 Name",
     "273" : "Extra Product #10 Desc.",
     "274" : "Extra Product #10 U/M",
-    "275" : "Extra Product # Price",
-    "276" : "Extra Product #7 Amount",
-    "277" : "Extra Product #7 Load Qty",
-    "278" : "Extra Product #7 Name",
-    "279" : "Extra Product #7 Desc.",
-    "280" : "Extra Product #7 U/M",
-    "281" : "Extra Product #7 Price",
-    "282" : "Extra Product #7 Amount",
-    "283" : "Extra Product #7 Load Qty",
-    "284" : "Extra Product #7 Name",
-    "285" : "Extra Product #7 Desc.",
-    "286" : "Extra Product #7 U/M",
-    "287" : "Extra Product #7 Price",
-    "288" : "Extra Product #7 Amount",
-    
-
-   
+    "275" : "Extra Product #10 Price",
+    "276" : "Extra Product #10 Amount",
+    "277" : "Extra Product #11 Load Qty",
+    "278" : "Extra Product #11 Name",
+    "279" : "Extra Product #11 Desc.",
+    "280" : "Extra Product #11 U/M",
+    "281" : "Extra Product #11 Price",
+    "282" : "Extra Product #11 Amount",
+    "283" : "Extra Product #12 Load Qty",
+    "284" : "Extra Product #12 Name",
+    "285" : "Extra Product #12 Desc.",
+    "286" : "Extra Product #12 U/M",
+    "287" : "Extra Product #12 Price",
+    "288" : "Extra Product #12 Amount",
+    "289" : "User Defined",
+    "290" : "Water In Truck",
+    "291" : "Water In Truck UOM",
+    "292" : "Maximum Water Cement Ratio"
 
 }
+"""
+key_result = input("Add the value: ")
+key_value = mix_transaction.get(key_result) 
+print(key_value)
 
 
-
+"""
 
 
 
