@@ -1,7 +1,7 @@
 
-# list of caracters of a list. 
+# Dictionary with the info related to a Mix Transaction. 
 
-mix_transaction = {
+tkt_transaction = {
     "T002" : "Begin Ticket",
     "T007" : "Ticket Data Field",
     "001" : "Plant ID #",

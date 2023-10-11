@@ -99,14 +99,14 @@ def logs_filter():
         if x.startswith('T') == True:
 
             ulink_field = x[:4]
-            ulink_field_description = TT.mix_transaction.get(ulink_field)
+            ulink_field_description = TT.tkt_transaction.get(ulink_field)
             filter_string_log.insert(END, x[:4] + " -- " + str(ulink_field_description) + " -- " + x[4:]+ "\n") 
             #print(x[:4] + " -- " + str(ulink_field_description) + " -- " + x[4:])
 
         else: 
 
             ulink_field = x[:3]
-            ulink_field_description = TT.mix_transaction.get(ulink_field)
+            ulink_field_description = TT.tkt_transaction.get(ulink_field)
             filter_string_log.insert(END, x[:3] + " -- " + str(ulink_field_description) + " -- " + x[3:] + "\n")   
             #print(x[:3] + " -- " + str(ulink_field_description) + " -- " + x[3:])
 
