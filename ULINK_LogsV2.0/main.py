@@ -79,6 +79,12 @@ button_search_logs = Button(buttons_frame, text = "Search", command= search)
 button_search_logs.grid(row = 0, column= 3, rowspan= 2, padx= 5, pady= 5)
 button_search_logs.config(height= 2, width= 16)
 
+# Frame where we are going to place the treeview
+
+tv_frame = LabelFrame(mainFrame)
+tv_frame.grid(row=1, column=0, padx= 20, pady= 5)
+
+
 
 
 """
