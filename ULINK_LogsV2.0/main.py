@@ -23,7 +23,24 @@ def convert():
     this function will be the main function, will filter the logs file from the Dispatch
     log box and filter into the threeview 
     """
-    return
+    global input_value
+    input_value = original_string_log.get("1.0","end-1c")
+
+    first_Filter_Logs = input_value[16:]
+    second_Filter_Logs = first_Filter_Logs.split("<cr>")
+
+    for x in second_Filter_Logs:
+
+        if x.startswith('T') == True:
+            ulink_field = x[:4]
+            ulink_field_description = TT.tkt_transaction.get(ulink_field)
+            my_tree.insert("",'end', values=(x[:4],str(ulink_field_description),x[4:]))
+
+        else:
+            ulink_field = x[:3]
+            ulink_field_description = TT.tkt_transaction.get(ulink_field)
+            my_tree.insert("",'end', values=(x[:3],str(ulink_field_description),x[3:]))
+            
 
 def clear():
     """
@@ -82,7 +99,50 @@ button_search_logs.config(height= 2, width= 16)
 # Frame where we are going to place the treeview
 
 tv_frame = LabelFrame(mainFrame)
-tv_frame.grid(row=1, column=0, padx= 20, pady= 5)
+tv_frame.grid(row=2, column=0, padx= 20, pady= 5)
+
+# Create a treeview Frame
+
+tree_frame= Frame(tv_frame)
+tree_frame.pack(pady=10)
+
+# Create a treeview Scrollbar
+
+tree_scroll = Scrollbar(tree_frame)
+tree_scroll.pack(side= RIGHT, fill=Y)
+
+# Create the treeview
+
+my_tree = ttk.Treeview(tree_frame, yscrollcommand=tree_scroll.set, selectmode="extended")
+my_tree.pack()
+
+# Configure the Scrollbar
+
+tree_scroll.config(command=my_tree.yview)
+
+# Define our columns 
+
+my_tree['columns'] = ("Field", "Description", "Value")
+
+# Format Our Columns 
+
+my_tree.column("#0", width=0, stretch=NO)
+my_tree.column("Field", anchor=CENTER, width= 100)
+my_tree.column("Description", anchor=CENTER, width= 200)
+my_tree.column("Value", anchor=CENTER, width= 200)
+
+# Create Headings
+
+my_tree.heading("#0", text="", anchor=W)
+my_tree.heading("Field", text="Field", anchor=CENTER)
+my_tree.heading("Description", text="Description", anchor=CENTER)
+my_tree.heading("Value", text="Value", anchor=CENTER)
+
+
+
+
+
+
 
 
 
