@@ -23,6 +23,10 @@ def convert():
     this function will be the main function, will filter the logs file from the Dispatch
     log box and filter into the threeview 
     """
+
+    for item in my_tree.get_children():
+        my_tree.delete(item)
+
     global input_value
     input_value = original_string_log.get("1.0","end-1c")
 
@@ -47,7 +51,11 @@ def clear():
     when the user press this button the values in the textbox of the Dispatch Logs, 
     and the filter vaules in the threview will be erase 
     """
-    return
+    for item in my_tree.get_children(): # remove all the information on the treeview
+        my_tree.delete(item)
+
+    original_string_log.delete('1.0', END) # Remove the information on the Dispatch log text box
+
 
 def search(): 
 
@@ -139,20 +147,5 @@ my_tree.heading("Description", text="Description", anchor=CENTER)
 my_tree.heading("Value", text="Value", anchor=CENTER)
 
 
-
-
-
-
-
-
-
-
-"""
-# // CLEAR BUTTON//
-
-button_clear_logs = Button(buttons_frame, text = "Clear", command= clear)
-button_clear_logs.grid(row = 0, column= 1, padx= 10, pady= 10)
-
-"""
 
 myApp.mainloop()
