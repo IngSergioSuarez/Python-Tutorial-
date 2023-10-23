@@ -56,13 +56,29 @@ def clear():
 
     original_string_log.delete('1.0', END) # Remove the information on the Dispatch log text box
 
-
+    
+ 
 def search(): 
 
-    """
-    Option to search values 
-    """
-    return
+    tree_data = my_tree.get_children()
+
+    print(tree_data)
+
+"""
+    query = entry_search_logs.get()
+    selections = []
+    for child in my_tree.get_children():
+        if query.lower() in my_tree.item(item, ['values']):   # compare strings in  lower cases.
+            print(my_tree.item['values'])
+            selections.append()
+    print('search completed')
+    my_tree.selection_set(selections)
+
+"""
+
+
+
+
 
 
 # Frame where we're place the Log strings to filter
