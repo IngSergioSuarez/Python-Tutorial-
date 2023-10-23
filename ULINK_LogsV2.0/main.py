@@ -13,6 +13,8 @@ myApp = Tk()
 myApp.title('ULINK logs')
 # myApp.geometry('600x400')
 
+search_entry_value = StringVar()
+
 mainFrame = Frame(myApp)
 mainFrame.pack()
 
@@ -113,7 +115,7 @@ button_clear_logs.config(height= 2, width= 16)
 label_search_logs = Label(buttons_frame, text="Search: ")
 label_search_logs.grid(row= 0, column= 2, sticky= W)
 
-entry_search_logs = Entry(buttons_frame, text="Search: ")
+entry_search_logs = Entry(buttons_frame, textvariable= search_entry_value)
 entry_search_logs.grid(row= 1, column= 2, pady= 5, padx= (0, 5))
 
 button_search_logs = Button(buttons_frame, text = "Search", command= search)
