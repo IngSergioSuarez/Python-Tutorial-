@@ -30,6 +30,8 @@ def convert():
         my_tree.delete(item)
 
     global input_value
+    global tree_data
+    tree_data = []
     input_value = original_string_log.get("1.0","end-1c")
 
     first_Filter_Logs = input_value[16:]
@@ -41,11 +43,14 @@ def convert():
             ulink_field = x[:4]
             ulink_field_description = TT.tkt_transaction.get(ulink_field)
             my_tree.insert("",'end', values=(x[:4],str(ulink_field_description),x[4:]))
+            tree_data.append((x[:4], str(ulink_field_description), x[4:]))
+            
 
         else:
             ulink_field = x[:3]
             ulink_field_description = TT.tkt_transaction.get(ulink_field)
             my_tree.insert("",'end', values=(x[:3],str(ulink_field_description),x[3:]))
+            tree_data.append((x[:3], str(ulink_field_description), x[3:]))
             
 
 def clear():
@@ -62,26 +67,12 @@ def clear():
  
 def search(): 
 
-    tree_data = my_tree.get_children()
+    query = entry_search_logs.get().lower()
+    my_tree.delete(*my_tree.get_children())  # Clear the Treeview
 
-    print(tree_data)
-
-"""
-    query = entry_search_logs.get()
-    selections = []
-    for child in my_tree.get_children():
-        if query.lower() in my_tree.item(item, ['values']):   # compare strings in  lower cases.
-            print(my_tree.item['values'])
-            selections.append()
-    print('search completed')
-    my_tree.selection_set(selections)
-
-"""
-
-
-
-
-
+    for item in tree_data:
+        if any(query in str(value).lower() for value in item):
+            my_tree.insert("", 'end', values=item)
 
 # Frame where we're place the Log strings to filter
 
@@ -115,7 +106,7 @@ button_clear_logs.config(height= 2, width= 16)
 label_search_logs = Label(buttons_frame, text="Search: ")
 label_search_logs.grid(row= 0, column= 2, sticky= W)
 
-entry_search_logs = Entry(buttons_frame, textvariable= search_entry_value)
+entry_search_logs = Entry(buttons_frame)
 entry_search_logs.grid(row= 1, column= 2, pady= 5, padx= (0, 5))
 
 button_search_logs = Button(buttons_frame, text = "Search", command= search)
