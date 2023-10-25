@@ -1,5 +1,5 @@
 
-# Dictionary with the info related to a Mix Transaction. 
+# Dictionary with the info related to a Ticket Transaction. 
 
 tkt_transaction = {
     "T002" : "Begin Ticket",
