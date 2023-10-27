@@ -40,6 +40,7 @@ def convert():
     for x in second_Filter_Logs:
 
         if x.startswith('T') == True:
+            
             ulink_field = x[:4]
             ulink_field_description = TT.tkt_transaction.get(ulink_field)
             my_tree.insert("",'end', values=(x[:4],str(ulink_field_description),x[4:]))
