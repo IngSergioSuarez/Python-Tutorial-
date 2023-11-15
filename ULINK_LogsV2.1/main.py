@@ -7,8 +7,6 @@ from tkinter.scrolledtext import ScrolledText
 import transactions.ticket_transaction as TT
 import transactions.mix_transaction as MT
 
-
-
 myApp = Tk()
 
 myApp.title('ULINK logs')
