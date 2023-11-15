@@ -32,6 +32,7 @@ def convert():
 
     global input_value
     global tree_data
+
     tree_data = []
     input_value = original_string_log.get("1.0","end-1c")
 
@@ -43,14 +44,14 @@ def convert():
 
     print (second_Filter_Logs)
 
-    for x in second_Filter_Logs:
+    transaction_type = second_Filter_Logs[0]
+    print (transaction_type)
 
-        if x.startswith('T') == True:
+    if transaction_type.startswith('T') == True:
 
-            transaction_type = "ticket"
+        for x in second_Filter_Logs:
 
-            if transaction_type == "ticket":
-
+            if x.startswith('T'):
             
                 ulink_field = x[:4]
                 ulink_field_description = TT.tkt_transaction.get(ulink_field)
@@ -62,15 +63,14 @@ def convert():
                 ulink_field = x[:3]
                 ulink_field_description = TT.tkt_transaction.get(ulink_field)
                 my_tree.insert("",'end', values=(x[:3],str(ulink_field_description),x[3:]))
-                tree_data.append((x[:3], str(ulink_field_description), x[3:]))
+                tree_data.append((x[:3], str(ulink_field_description), x[3:])) 
 
-        elif x.startswith('M') == True:
+    if transaction_type.startswith('M') == True:
 
-            transaction_type = "mix"
+        for x in second_Filter_Logs:
 
-            if transaction_type == "mix":
-
-                            
+            if x.startswith('M'):
+            
                 ulink_field = x[:4]
                 ulink_field_description = MT.mix_transaction.get(ulink_field)
                 my_tree.insert("",'end', values=(x[:4],str(ulink_field_description),x[4:]))
@@ -82,7 +82,6 @@ def convert():
                 ulink_field_description = MT.mix_transaction.get(ulink_field)
                 my_tree.insert("",'end', values=(x[:3],str(ulink_field_description),x[3:]))
                 tree_data.append((x[:3], str(ulink_field_description), x[3:]))
-            
 
 def clear():
     """

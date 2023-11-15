@@ -8,3 +8,9 @@ How to use it:
  
 4. To clear the Box and the grid just press the "Clear" Button
 
+
+Version ULINK_LogsV2.1 updates
+
+1. Improve the code to divide the mix transactions with the ticket transactions, now the program is able to differentiate this 
+two transactions types automatically. 
+
