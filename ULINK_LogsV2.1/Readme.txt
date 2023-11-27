@@ -1,3 +1,4 @@
+
 How to use it: 
 
 1. Place the string T002 that Tracevierwer provide you in the Box "Dispatch Log: "
@@ -13,4 +14,9 @@ Version ULINK_LogsV2.1 updates
 
 1. Improve the code to divide the mix transactions with the ticket transactions, now the program is able to differentiate this 
 two transactions types automatically. 
+
+2. With the new version if we have any space between the begin of the string an the T002 caracters ( look this as an 
+example " DSP: <sy> <sy><sx>T0025533203<cr>") the system won't crash. (11/27/2023)
+
+
 

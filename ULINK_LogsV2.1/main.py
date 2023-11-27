@@ -34,13 +34,11 @@ def convert():
     tree_data = []
     input_value = original_string_log.get("1.0","end-1c")
 
-    first_Filter_Logs = input_value[16:]
+    posicion_sx = input_value.find("<sx>")
 
-    print (first_Filter_Logs)
-
+    filter_logs = input_value[posicion_sx:]
+    first_Filter_Logs = filter_logs[4:]
     second_Filter_Logs = first_Filter_Logs.split("<cr>")
-
-    print (second_Filter_Logs)
 
     transaction_type = second_Filter_Logs[0]
     print (transaction_type)
