@@ -1,0 +1,606 @@
+CB118512
+
+marc.moreau@shellyco.com3
+
+Marc Moreau 
+
++16146346988
+
+Problem: 
+
+Bin name doesn't match to the one in another systems
+
+Details:
+
+> Logged into the cx pc
+> check the 2 plants and both of them has label 4 bins with aggs Bin1, bin2, bin3, bin4
+> customer needs the plant 2 the bins label from Bin06 to Bin08
+> Explain the cx the only way that we have is create 4 new bins and labeled as the way he wants 
+> Cx will ask to the plant manager and give us a call if further assistance is need it 
+> gave him the case number 
+
+
+***********************************************
+****************************************************
+
+
+839328663 rbf2zy 
+
+CBH134731 
+
+Orwa Almaaz
+
+159075
+
+Problem
+
+RS on red, back up process doesn't finish  
+
+Details
+
+> logged into the cx pc
+> kill the DButilities process
+> Restart the eVM 
+> repair the image of the evm ersion 2.1.15113
+> this cause a False green on the system 
+> repair the installation of the vRTC
+> Upgrade the version of the vRTC firmware
+> DRS back to green communication gets confirm 
+> License file upgrade due a pop up message of exceed RTC counts
+> Change the destination of the Back up from F to G 
+> run a EOD report
+> the DB utilities get frozen when run the DB of the archive 
+> something is corrupted on the archive DB, but customer wants to deal with this problem later 
+> gave him the case number 
+
+
+***********************************************
+****************************************************
+
+Tommy 
+
+CB132533 
+
+605 winston Rd. 
+
+Jonesville, North Carolina 
+
+28642 
+
+
+Problem
+
+CEM LCI baord is showing Bad cell
+
+Details:
+
+> Cx check the voltage and we are not sending the Ex voltage, we measure with and without connector and just send 0.1 VDC 
+> Replace the Board and have the same problem
+> tested in a different module and problem remains
+> according the cx the Agg scale is working fine
+> Suggest the cx that can be caused this problem due an electronic problem on the Base board and would be a good idea test with a new baseboard
+> Send a LK and PS 
+> gave him the case number 
+
+***********************************************
+****************************************************
+
+1275934391 vec6z7uj 
+
+CBH139696
+
+159184 
+
+Problem:
+
+Set the NC to start with the tail water . 
+
+Details. 
+
+> logged into the cx pc
+> Set the ADMIX06 (NC) to start when the Feed set scales finish on every batch
+> tested with a training batch 
+> Remove the base sequences N in the plant forms 
+> Gave him the case number 
+
+
+1053526414 kvexbitd 
+
+***********************************************
+****************************************************
+
+292931068 ja2n8e66 
+
+CBH137146 
+
+Problem: 
+
+Cx needs to install the PWS on the system 
+
+Details: 
+
+> logged into the cx pc
+> Check the license and the PWS is activate
+> Install the PWS's Db. 
+> open the interface. 
+> Cx will add the data points for the calibration
+> Gave him the case number 
+
+
+***********************************************
+****************************************************
+
+158417 
+Q-83798
+
+problem
+
+RS on red 
+
+Details. 
+
+> CX send the pictures requested
+> according to the picture, the RTC is facing some problems with the HHD of the RTC
+> try to reseat the CFD frlash drive, but it wasn't possible.
+> Explain the cx the only way that we have at the moment is replace the RTC 
+> set the order. 
+> gave him the case number 
+
+***********************************************
+****************************************************
+
+1404018709  xs9p9a6v
+
+Doug Adams 
+
+CB124344 
+
+159132 
+
+Problem
+
+Admix04 converting unit not found
+
+Details: 
+
+> Logged into the cx pc
+> system display the error message "Load init error, can't convert the unit ADMIX04"
+> Create a unit conversion from oz. multiply by 1 to get oz
+> Change the unit of the 7920 in the mix 725.6000 from oz. to oz
+> try with a load but the material is not feeding and is blocking the load
+> the ADMIX0404 is sharing display with the ADMIX06. ADMIX04 is waiting the ADMIX06 to finish and then it start to weigh up into the bottle04
+> Add a step on the sequences to make the ADMIX04 start ASAP, and set a sequences priority on the material to make the ADMIX04(7920) feed first than ADMIX06(X-44)
+> tested with a real load and seems to work
+> Cx will keep testing 
+> Gave him the case number 
+
+***********************************************
+**************************************************** 
+
+Keith Randall 
+159205 
+
+1223507508  ykn8c9cx 
+
+Problem
+
+Ghost pulses on the water 
+
+Details: 
+
+> Logged into the cx pc
+> Check one load but the problem never happen during the load
+> suggest the customer to keep an eye on the water, and if the problem happen again call us back to change the input position 
+> we need it to change that in the program IO assigments and in the MS display
+> gave him the case number .
+
+***********************************************
+**************************************************** 
+
+1197699877      374wuufz  
+
+CB128033 
+
+Salma Ramdass
+
+Problem
+
+DRS on red, CBContorlNEt error appears 
+
+Details: 
+
+> Logged into the cx pc
+> open the CB and found the DRS on red
+> Check the services was on green
+> EVM was off, start the eVM 
+> After start the EVM, DRS back to green but the eVM icon was red instead of Green, to avoid complication i ran the repair image, version 2.6 
+> after the repair image it show me s on red, due a problem with the serial scales of the cx 
+> evm icon remain red but it DR on green, Reboot the pc
+> System shows the same error message but with the RTC running, checking the CBControlNet adapter seems correct
+> Ran the repair installation 
+> DRS back to green  
+> AER was overweigh, after several modifications including a preact override of 10 and jitter amount of 10, settle time from 3 to 6 sec, the system wasn't feeding the material
+> suggest the cx to call the admix company and see what can be donde to solve that problem 
+> gave him the case number 
+
+
+***********************************************
+**************************************************** 
+
+1731757140  smx626 
+
+Moises Bonia 
+
+159453 
+
+Problem: 
+
+Cx wants to connect a new Printer OKIdata 420 microline 
+
+Details: 
+
+> Logged into the cx pc
+> try to install the Printer but it doesn't appear in the printer list
+> try to installed but it doesn't show the driver for OKIDATA 420 
+> Download the driver but reqauire administrator privilige
+> IT department give me the Password for the credentials BRPCommand!
+> Install the driver in the printer
+> Change the port from LPT1 to LPT3 
+> tested with a test page and works well
+> Set the printer in the pritner setup, tested but it seems the tear off was disable, enabled the Tear off position
+> move the format one character to the right 
+> cx we set the Top of form position and give us a callback if assistance is need it
+> Gave him the case number 
+
+
+ADM priviligies BurnBRPCommand!
+
+
+***********************************************
+**************************************************** 
+
+Joshua Park 
+
+894790853 1j947j2z
+
+CBS112953 
+
+353481
+
+159490
+
+
+
+Problem: 
+
+ADmix05 has stopped for load, Contact Command Alkon 
+
+Details: 
+
+> Logged into the cx pc
+> Check the Material was send to the correct device, it was set to the bottle and the bottle goes to the truck
+> Restart the RTC, same problem
+> Add again the material to te metered feed 
+> check the sequences and seems fine
+> open the Trace viewer and restart services 
+> seems the system was founding a convertion problem with the oz. and oz 
+> Tested with a real laod and everything works correctly
+> gave him the case number 
+
+***********************************************
+**************************************************** 
+
+Jason Boucher
+
+308596395 qiqzpzs7 
+
+159520 
+
+CB129353 
+
+
+Problem: 
+
+Change the silo capacity of the slag
+
+Details:
+
+> Logged into the cx pc
+> Access with SA 
+> Change the maximum capacoty of the material from 50 to 75  using materials/laocations/inventory 
+> gave him the case number 
+
+***********************************************
+**************************************************** 
+
+1732481813  3igtbbvk 
+
+CBS118446
+
+Donald Sanderson  
+
+159526 
+
+Problem: 
+
+S on red, theres's not red led in the 5V board
+
+Details: 
+
+> Logged into the cx pc
+> Check the MS fuse and is fine
+> according the cx there's not lights on the MS
+> Meassure the voltage in the PS but we are not receiving any voltage to the MS and the PS 
+> Send a new power supply and LK
+> Gave him the case number 
+
+
+Q-83905
+
+
+
+Delta Onsite Plant 41 
+4011 Charliegh D. Ford Drive
+Columbus, MS  39701
+
+ssuarez@commandalkon.com 
+
+Delta Onsite Plant 41 
+4011 Charliegh D. Ford Drive
+Columbus, MS  39701
+
+
+Please call me back my phone dropped the call
+
+(662)242-6786
+
+
+***********************************************
+**************************************************** 
+
+158173 
+
+18684738152
+
+1975833535   4jwvhx
+
+159467
+
+Problem
+
+MS is not communicating with the PC
+
+Details: 
+
+> Logged into the cx pc
+> place the network card in the eVM layer
+> Change the serial port to ser3 to ser4
+> DRS back to green 
+> Gave him the case number
+
+***********************************************
+**************************************************** 
+
+
+Greg 
+
+CB123080 
+
+6043574500
+
+8255404007
+
+***********************************************
+**************************************************** 
+
++64 800461670
+jhon 
+
+64275828679
+
+CB133609 
+
+Problem:
+
+Pchip error 
+
+Details: 
+
+> restore the backup info in the pchip. 
+> After follow the procedure the system is back on running
+> gave him the case number 
+
+***********************************************
+**************************************************** 
+
+Herbert
+
+CB125163 
+
+3372416996
+
+207142888 ghwijx9n 
+
+159597
+
+Elray Kocke Services Inc
+
+Herbert Hettinger
+
+Problem: 
+
+S on red
+
+Details: 
+
+> logged into the cx pc
+> Cx change all the ports in the cable and the software, didn't sole the problem
+> Checking the EVM and it was the serial card
+> Cx tell me the MP was reading random values, suggest to disconnect the cable of the MP 
+> Suggest the cx to reseat the PB, restart the vRTC
+> Try to uninstall the serial card to avoid any problem with the PC
+> Serial card recognized automatically, Fase green after passing the Serial card from windows to eVM 
+> Send to the cx a LK and serial cable 
+> gave him the case number 
+
+1345 YOUNGS RD MORGAN CITY  LOUISIANA 70380  
+P.O PLANT 2
+
+***********************************************
+**************************************************** 
+
+Chriss Jhonson 
+
+408079716 xsrdkpg2 
+
+CB132742 
+
+159694 
+
+Problem 
+
+S on red
+
+Details: 
+
+> Logged into the cx pc
+> Check the evm layer and we have the bluestorm card available 
+> Change the com port from COM3 to COM4
+> S back to green, tested with a truck and everything seems working properly
+> system back and running 
+> gave him the case number 
+
+***********************************************
+**************************************************** 
+
+Case number 159702 
+SO number: CBS102731 
+ gbrcd38277
+
+ 9:31 son 14:31 
+
+ 8:20 
+
+ Problem:
+
+ Cx has overweigh problems on the aggs for loads of 2 mtr3
+
+
+ Details. 
+
+ > logged by simplehelp to the  Sittingbourne plant 
+ > at the momento the cx hasn't loads to check the adjustments, he wants a callback for tomorrow
+ > gave him the case number 
+
+
+***********************************************
+***********************************************
+
+DEP 
+
+650248247  kqb13r9h 
+
+CBHs36083
+
+159740 
+
++1 304-545-9331
+
+Sam Marsico 
+
+Problem: 
+
+Reports for many yards produced by 2021, 2022 and 2023
+
+Details: 
+
+> logged into the cx pc. 
+> check if the cx has EOY DB to access into the old reports 
+> Cx hasn't the EOY for the other years, try to acces to the archive of the 2023
+> the version of the CB doesn't allow us to take information of the Mix production report
+> took a copy of the DB and access into my PC and generate the report for the 2023
+> Save the report in the cx's PC
+> gave him the case number 
+
+***********************************************
+***********************************************
+
+33353618
+333353618  xtzb61 
+
+480504143 rpn8zngx 
+
+CBHS35078 
+
+Problem
+
+CB is not receiving tkts from CS 
+
+Details: 
+
+> Logged into the cx pc
+> checking the firewalls are off and the ports are open in the CB
+> try to make telnet and it wasn't possible, it said Connecting To 172.28.6.41...Could not open connection to the host, on port 7000: Connect failed
+> access to the CS's pc and found the port 7000 was not listen 
+> suggest the Cx to open that port, according the cx the other locations are working correctly, so, he wants to check other options
+> Join a partner from CS to check the system, and he found that maybe the problem can be a comm manager 
+> After the cx restart the Comm manager, the tickets came across
+> gave him the case number 
+
+
+***********************************************
+***********************************************
+
+1145735682  jeb9f27n 
+
+CBH151134 
+
+Problem 
+
+Cx receive the LK to keep the problem with the agg scale. 
+
+Details: 
+
+> Logged into the cx pc
+> Replace the LCI Board
+> System keep showing negative values it goes from -1760 lb and then goes to -1540lb
+> Swap the cables between the agg scale and the cem scale and the problem transfer to the other scale
+> suggest the cx that can be a plant related issue, and call the scale company to double check the load cell box
+> gave him the case number 
+
+***********************************************
+***********************************************
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
