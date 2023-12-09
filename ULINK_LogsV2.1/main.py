@@ -34,11 +34,11 @@ def convert():
     tree_data = []
     input_value = original_string_log.get("1.0","end-1c")
 
-    posicion_sx = input_value.find("<sx>")
+    posicion_sx = input_value.find("<sx>") # We get th4e position where start the code <sx> that is include in the begin of the T002 and M002 
 
-    filter_logs = input_value[posicion_sx:]
-    first_Filter_Logs = filter_logs[4:]
-    second_Filter_Logs = first_Filter_Logs.split("<cr>")
+    filter_logs = input_value[posicion_sx:] #now the string will eliminate everything before the position of the <sx>
+    first_Filter_Logs = filter_logs[4:] # we eliminate the characters <sx> 
+    second_Filter_Logs = first_Filter_Logs.split("<cr>") # now we are going to eliminate the  
 
     transaction_type = second_Filter_Logs[0]
     print (transaction_type)
