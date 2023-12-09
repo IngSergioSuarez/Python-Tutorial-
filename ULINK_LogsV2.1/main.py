@@ -96,9 +96,15 @@ def search():
     query = entry_search_logs.get().lower()
     my_tree.delete(*my_tree.get_children())  # Clear the Treeview
 
+
     for item in tree_data:
         if any(query in str(value).lower() for value in item):
             my_tree.insert("", 'end', values=item)
+
+
+    if any(query in str(value).lower() for value in item):
+        my_tree.insert("", 'end', values=item)
+
 
 # Frame where we're place the Log strings to filter
 
@@ -181,6 +187,8 @@ my_tree.heading("Field", text="Field", anchor=CENTER)
 my_tree.heading("Description", text="Description", anchor=CENTER)
 my_tree.heading("Value", text="Value", anchor=CENTER)
 
+# Configura la etiqueta de estilo para el fondo amarillo
+my_tree.tag_configure('highlight', background='yellow')
 
 
 myApp.mainloop()
